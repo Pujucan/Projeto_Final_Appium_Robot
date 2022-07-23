@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.10.0 on win32)" generated="20220723 17:34:16.954" rpa="false" schemaversion="3">
+<suite id="s1" name="testesCadastrar" source="C:\_AUTOMACAO\appium-robot\tests\testesCadastrar.robot">
+<test id="s1-t1" name="Cadastrar pessoa duplicada" line="26">
+<kw name="Open Session" library="Cadastrar" type="SETUP">
+<kw name="Set Appium Timeout" library="AppiumLibrary">
+<arg>10</arg>
+<doc>Sets the timeout in seconds used by various keywords.</doc>
+<status status="PASS" starttime="20220723 17:34:17.133" endtime="20220723 17:34:17.133"/>
+</kw>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=Any</arg>
+<arg>app=${EXECDIR}/apks/app-curso.apk</arg>
+<arg>appPackage=com.example.cursoappium</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20220723 17:34:19.215" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20220723 17:34:19.213" endtime="20220723 17:34:19.219"/>
+</kw>
+<msg timestamp="20220723 17:34:19.220" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20220723 17:34:19.224" level="FAIL">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: The application at 'C:\_AUTOMACAO\appium-robot\tests/apks/app-curso.apk' does not exist or is not accessible
+</msg>
+<status status="FAIL" starttime="20220723 17:34:17.134" endtime="20220723 17:34:19.224"/>
+</kw>
+<status status="FAIL" starttime="20220723 17:34:17.133" endtime="20220723 17:34:19.224"/>
+</kw>
+<kw name="Close Session" library="Cadastrar" type="TEARDOWN">
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20220723 17:34:19.227" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20220723 17:34:19.226" endtime="20220723 17:34:19.228"/>
+</kw>
+<msg timestamp="20220723 17:34:19.229" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20220723 17:34:19.231" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20220723 17:34:19.226" endtime="20220723 17:34:19.231"/>
+</kw>
+<status status="FAIL" starttime="20220723 17:34:19.224" endtime="20220723 17:34:19.231">No application is open</status>
+</kw>
+<status status="FAIL" starttime="20220723 17:34:17.133" endtime="20220723 17:34:19.232">Setup failed:
+WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: The application at 'C:\_AUTOMACAO\appium-robot\tests/apks/app-curso.apk' does not exist or is not accessible
+
+
+Also teardown failed:
+No application is open</status>
+</test>
+<status status="FAIL" starttime="20220723 17:34:16.957" endtime="20220723 17:34:19.235"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="testesCadastrar">testesCadastrar</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220723 17:34:19.220" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20220723 17:34:19.229" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+</errors>
+</robot>
