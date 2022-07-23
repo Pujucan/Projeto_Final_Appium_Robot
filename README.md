@@ -1,75 +1,57 @@
-# Robot-appium: automação para Android
+# CursoAppium_CadastrarPessoaEspresso
+CursoAppium_CadastrarPessoaEspresso
 
-Este projeto realiza o fluxo de automação do aplicativo [Curso de Appium](https://github.com/clarabez/appium-android-app) utilizando o [Robot Framework](https://robotframework.org/robotframework/).
+Introduction
+This is the automation project for Curso Appium
 
-Para isso, utilizei os recursos da [biblioteca robot-framework-appiumlibrary](https://github.com/serhatbolsu/robotframework-appiumlibrary) e também [demais keywords da documentação](http://serhatbolsu.github.io/robotframework-appiumlibrary/AppiumLibrary.html).
+Tests >> Test flow for the execution.
 
-### Sobre o aplivativo em teste
+README.md >> About the project and instructions of how to run it.
 
-O aplicativo [Curso de Appium](https://github.com/clarabez/appium-android-app) vem sendo desenvolvido para o ensino/aprendizado de automação mobile com Appium. É um aplicativo simples, com o objetivo de realizar cadastros, mas traz elementos muito comuns de fluxos de automação mobile: EditText, spinner para fazer scroll up/down em listas, toast messages, etc.
+Scenarios to be tested
 
-<div align="center">
-<img src="imagens/tela_principal_app.png" width="200" height="400">
-</div>
+Scenario 1: testCadastrarPessoaValida
 
+Dado que tenha um nome
+Quando inserir um e-mail
+E selecionar sexo
+E selecionar Estado
+Então verifica se e-mail já existe
 
-### Organização do projeto
+Scenario 2: testCadastrarContaDuplicada
 
-````
-appium-robot/
-  apks/
-  imagens/
-  resources/
-  .gitignore
-  curso.robot
-  requirements.txt
-````
+Dado que tenha um nome
+Quando inserir um e-mail já existente
+E selecionar sexo
+E selecionar Estado
+Então verifica se e-mail já existe
 
-<ul>
+Scenario 3: testBotaoVoltar
 
-- imagens: imagens do README.md
+Dado que tenha um nome
+Quando inserir um e-mail já existente
+E clicar no botão voltar
 
-- apks: aplicativos em uso no projeto.
-- resources: abstrações das telas, contendo as palavras-chave utilizadas nos fluxos de teste. Pretendo deixar 1 arquivo para cada tela.
-- tests: fluxos de teste de cada tela da aplicação.
-- .gitignore: arquivo padrão.
-- curso.robot: rascunho do início do projeto, onde deixei tudo num único arquivo e só depois fui separando as funcionalidades. Deixei no projeto porque pode ser útil par alguém.
-- requirements.txt: dependências do projeto.
-</ul>
+Scenario 4: testCadastrarEmailInvalido
 
-### Passo a passo para executar o projeto
+Dado que tenha o campo nome vazio
 
-Sugiro o uso de algum ambiente virtual (virtualenv) para isolar as bibliotecas utilizadas aqui, mas não tem problemas iniciar o projeto sem um ambiente virtual. Mais sobre [ambientes virtuais aqui](https://realpython.com/lessons/creating-virtual-environment/).
+Scenario 5: testCadastrarComEmailVazio
 
+Dado que tenha um nome
+Quando selecionar sexo
+E selecionar Estado
+E clicar no botão cadastrar
+Então verifica o nome completo
 
-Clonar o projeto:
-```
-git clone https://github.com/clarabez/appium-robot.git
-```
+Test Environment information
+Application version:
+Android Studio Chipmunk 2021.2.1 Patch 1
 
-Instalar as dependências (com esse passo vc não precisa instalar bibliotecas individualmente, como nos 2 passos seguintes):
-```
-pip install -r requirements.txt
-```
+Information about device under test:
+Emulated device from Android Studio.
+Model: Google Pixel 5.
+Android version: AVD_Pixel_5_API_30
 
-OU instalar as bibliotecas de forma de forma isolada.
-
-Instalar a biblioteca [robotframework-appiumlibrary](http://serhatbolsu.github.io/robotframework-appiumlibrary/AppiumLibrary.html) (não precisa se vc instalou via requirements.txt):
-```
-pip install --upgrade robotframework-appiumlibrary
-```
-
-Instalar o [appium-python-client](https://pypi.org/project/Appium-Python-Client/) (não precisa se vc instalou via requirements.txt):
-```
-pip install appium-python-client
-```
-
-Para executar o projeto:
-```
-robot tests/testes_curso_appium.robot
-```
-
-Caso queira direcionar os arquivos de saída gerados pela execução, é só criar uma pasta no projeto e usar a flag -d indicando o nome da pasta:
-```
-robot -d <</pasta/logs>> tests/testes_curso_appium.robot
-```
+IDE for test development:
+CursoAppium_CadastrarPessoaEspresso
