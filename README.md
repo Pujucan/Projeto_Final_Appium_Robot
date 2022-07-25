@@ -12,37 +12,37 @@ Scenarios to be tested
 
 Scenario 1: testCadastrarPessoaValida
 
-Dado que tenha um nome
-Quando inserir um e-mail
-E selecionar sexo
-E selecionar Estado
-Então verifica se e-mail já existe
+       * Dado que tenha um nome
+         Quando inserir um e-mail
+         E selecionar sexo
+         E selecionar Estado
+         Então verifica se e-mail já existe
 
 Scenario 2: testCadastrarContaDuplicada
 
-Dado que tenha um nome
-Quando inserir um e-mail já existente
-E selecionar sexo
-E selecionar Estado
-Então verifica se e-mail já existe
+      * Dado que tenha um nome
+        Quando inserir um e-mail já existente
+        E selecionar sexo
+        E selecionar Estado
+        Então verifica se e-mail já existe
 
 Scenario 3: testBotaoVoltar
 
-Dado que tenha um nome
-Quando inserir um e-mail já existente
-E clicar no botão voltar
+      * Dado que tenha um nome
+        Quando inserir um e-mail já existente
+        E clicar no botão voltar
 
 Scenario 4: testCadastrarEmailInvalido
 
-Dado que tenha o campo nome vazio
+      Dado que tenha o campo nome vazio
 
 Scenario 5: testCadastrarComEmailVazio
 
-Dado que tenha um nome
-Quando selecionar sexo
-E selecionar Estado
-E clicar no botão cadastrar
-Então verifica o nome completo
+    * Dado que tenha um nome
+      Quando selecionar sexo
+      E selecionar Estado
+      E clicar no botão cadastrar
+      Então verifica o nome completo
 
 Test Environment information
 Application version:
